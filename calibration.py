@@ -3,8 +3,6 @@ import cv2 as cv
 import glob
 import pickle
 
-
-
 ################ FIND CHESSBOARD CORNERS - OBJECT POINTS AND IMAGE POINTS #############################
 
 chessboardSize = (9,6)
