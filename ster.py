@@ -3,14 +3,14 @@ import cv2
 import matplotlib.pyplot as plt
 import open3d as o3d
 
-imgL = cv2.imread('imR.jpg', 0)
-imgR = cv2.imread('imL.jpg', 0)
+imgL = cv2.imread('imL.jpg', 0)
+imgR = cv2.imread('imr.jpg', 0)
 
-stereo = cv2.StereoBM_create(numDisparities=16, blockSize=5)
-disparity = stereo.compute(imgR, imgL)
+stereo = cv2.StereoSGBM_create(numDisparities=96, blockSize=23)
+disparity = stereo.compute(imgL, imgR)
 disparity = cv2.convertScaleAbs(disparity)
-disparity = np.array(256 * disparity / 0x0fff,
-                            dtype=np.uint8)
+# disparity = np.array(256 * disparity / 0x0fff,
+#                             dtype=np.uint8)
 
 pcd = []
 FX_DEPTH = 464.26828003

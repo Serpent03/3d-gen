@@ -29,7 +29,7 @@ while True:
     cLeft_8UC1 = cv2.cvtColor(cLeft, cv2.COLOR_RGB2GRAY)
     cRight_8UC1 = cv2.cvtColor(cRight, cv2.COLOR_RGB2GRAY)
 
-    stereo = cv2.StereoBM_create(numDisparities=16, blockSize=19)
+    stereo = cv2.StereoSGBM_create(numDisparities=90, blockSize=19)
     np_horizontal = np.hstack((cLeft_8UC1, cRight_8UC1))
     disparity = stereo.compute(cLeft_8UC1, cRight_8UC1)
     disparity = cv2.convertScaleAbs(disparity)
