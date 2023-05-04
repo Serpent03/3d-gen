@@ -62,6 +62,7 @@ ret, cameraMatrix, dist, rvecs, tvecs = cv.calibrateCamera(objpoints, imgpoints,
 # Save the camera calibration result for later use (we won't worry about rvecs / tvecs)
 pickle.dump((cameraMatrix, dist), open( "calibration.pkl", "wb" ))
 pickle.dump(cameraMatrix, open( "cameraMatrix.pkl", "wb" ))
+pickle.dump(cameraMatrix, open( "newCameraMatrix.pkl", "wb" ))
 pickle.dump(dist, open( "dist.pkl", "wb" ))
 
 
